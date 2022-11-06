@@ -28,7 +28,7 @@ const Licznik: React.FC<LicznikType> = ({numer, setNumer}) => {
             </div>
             <div className={'przyciski'}>
                 <Button className={'przycisk'} disable={numer === 5} name={'INC'} callback={onClickIncHandler}/>
-                <Button className={`przycisk ${classForTitle}`} disable={numer === 0} name={'RESET'} callback={onClickResetHandler}/>
+                <Button className={'przycisk'} disable={numer === 0} name={'RESET'} callback={onClickResetHandler}/>
             </div>
         </div>
     );
