@@ -9,7 +9,10 @@ type LicznikType = {
 const Licznik: React.FC<LicznikType> = ({numer, setNumer}) => {
 
     const onClickIncHandler = () => {
-        numer < 5 && setNumer(++numer)
+        // numer < 5 && setNumer(++numer)
+        if (numer < 5) {
+            setNumer(++numer)
+        }
     }
 
     const onClickResetHandler = () => {
