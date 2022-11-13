@@ -1,8 +1,10 @@
 .App {
-  text-align: center;
-  display: flex;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(2, 334px);
+  column-gap: 70px;
   justify-content: center;
-  padding-top: 200px;
+  align-items: center;
 }
 
 .counter {
@@ -10,10 +12,6 @@
   width: 300px;
   border: 2px solid #61dafb;
   border-radius: 10px;
-}
-
-.counter:first-child {
-  margin-right: 100px;
 }
 
 .buttons {
@@ -48,6 +46,7 @@
   color: #61dafb;
   font-weight: 700;
   font-size: 50px;
+  text-align: center;
 }
 
 .titleRed {
@@ -62,14 +61,23 @@
 }
 
 .placeSetting {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  padding: 15px;
+  display: grid;
+  justify-content: space-between;
+  align-items: center;
+  grid-template-columns: 130px 100px;
+  grid-template-rows: repeat(2, 40px);
+  row-gap: 20px;
 }
 
 .input {
-  width: 200px;
   padding: 5px;
-  margin: 15px auto;
+  border-color: #61dafb;
+  border-radius: 5px;
+}
+
+.span {
+  color: #61dafb;
+  font-weight: 700;
+  font-size: 25px;
 }
