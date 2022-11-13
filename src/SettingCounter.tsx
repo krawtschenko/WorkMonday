@@ -1,12 +1,12 @@
 import React from 'react';
 import Button from "./Button";
 
-type SettingCounterpropsType = {
+type SettingCounterPropsType = {
     minValue: number
     maxValue: number
 }
 
-const SettingCounter: React.FC<SettingCounterpropsType> = ({minValue, maxValue}) => {
+const SettingCounter: React.FC<SettingCounterPropsType> = ({minValue, maxValue}) => {
     return (
         <div className={'counter'}>
             <div className={`place`}>
