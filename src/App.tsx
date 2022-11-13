@@ -1,13 +1,15 @@
 import React, {useState} from 'react';
 import './App.css';
-import Licznik from "./Licznik";
+import Counter from "./Counter";
+import SettingCounter from "./SettingCounter";
 
 function App() {
-    let [numer, setNumer] = useState(0)
+    let [num, setNum] = useState(0)
 
     return (
         <div className="App">
-            <Licznik numer={numer} setNumer={setNumer}/>
+            <SettingCounter/>
+            <Counter num={num} setNum={setNum}/>
         </div>
     );
 }

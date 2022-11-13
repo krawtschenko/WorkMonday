@@ -4,7 +4,7 @@ type ButtonPropsType = {
     name: string
     callback: () => void
     className: string
-    disable: boolean
+    disable?: boolean
 }
 
 const Button: React.FC<ButtonPropsType> = ({className, callback, name, disable}) => {

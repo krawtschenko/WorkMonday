@@ -1,42 +1,75 @@
 .App {
   text-align: center;
+  display: flex;
+  justify-content: center;
+  padding-top: 200px;
 }
 
-.licznik {
-  margin: 100px auto;
-  padding: 10px;
+.counter {
+  padding: 15px;
   width: 300px;
-  border: 2px solid deepskyblue;
+  border: 2px solid #61dafb;
   border-radius: 10px;
 }
 
-.przyciski {
-  padding: 10px;
-  display: flex;
-  justify-content: space-around;
+.counter:first-child {
+  margin-right: 100px;
 }
 
-.przycisk {
+.buttons {
+  margin-top: 15px;
+  padding: 20px;
+  border: 2px solid #61dafb;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttonsSetting {
+  justify-content: center;
+}
+
+.button {
   width: 100px;
   border: none;
   border-radius: 5px;
   padding: 10px;
-  background-color: deepskyblue;
+  background-color: #61dafb;
+  font-weight: 600;
+  font-size: 20px;
   cursor: pointer;
 }
 
-.przycisk:active {
+.button:active {
   background-color: yellow;
+}
+
+.title {
+  color: #61dafb;
+  font-weight: 700;
+  font-size: 50px;
 }
 
 .titleRed {
   color: red;
-  font-weight: 600;
 }
 
-.plac {
-  margin: 0px auto;
-  width: 90%;
-  border: 2px solid blue;
+.place {
+  height: 130px;
+  margin: 0 auto;
+  border: 2px solid #61dafb;
   border-radius: 10px;
+}
+
+.placeSetting {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.input {
+  width: 200px;
+  padding: 5px;
+  margin: 15px auto;
 }
