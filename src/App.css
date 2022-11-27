@@ -54,7 +54,6 @@
 }
 
 .place {
-  height: 130px;
   margin: 0 auto;
   border: 2px solid #61dafb;
   border-radius: 10px;
@@ -67,7 +66,9 @@
   align-items: center;
   grid-template-columns: 130px 100px;
   grid-template-rows: repeat(2, 40px);
-  row-gap: 20px;
+  row-gap: 16px;
+  border: 2px solid #61dafb;
+  border-radius: 10px;
 }
 
 .input {

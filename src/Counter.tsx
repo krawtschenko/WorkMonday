@@ -1,24 +1,25 @@
 import React from 'react';
 import Button from "./Button";
+import {ValuesType} from "./App";
 
 type CounterType = {
     num: number
     setNum: (num: number) => void
+    values: ValuesType
 }
 
-const Counter: React.FC<CounterType> = ({num, setNum}) => {
-
-    const onClickIncHandler = () => {
-        if (num < 5) {
+const Counter: React.FC<CounterType> = ({num, setNum, values}) => {
+    function onClickIncHandler() {
+        if (num < values.maxValue) {
             setNum(++num)
         }
     }
 
-    const onClickResetHandler = () => {
-        setNum(0)
+    function onClickResetHandler() {
+        setNum(values.minValue)
     }
 
-    const classForTitle = num === 5 ? `title titleRed` : 'title'
+    const classForTitle = num === values.maxValue ? `title titleRed` : 'title'
 
     return (
         <div className={'counter'}>
@@ -26,8 +27,8 @@ const Counter: React.FC<CounterType> = ({num, setNum}) => {
                 <h1 className={classForTitle}>{num}</h1>
             </div>
             <div className={'buttons'}>
-                <Button className={'button'} disable={num === 5} name={'INC'} callback={onClickIncHandler}/>
-                <Button className={'button'} disable={num === 0} name={'RESET'} callback={onClickResetHandler}/>
+                <Button className={'button'} disable={num === values.maxValue} name={'INC'} callback={onClickIncHandler}/>
+                <Button className={'button'} disable={num === values.minValue} name={'RESET'} callback={onClickResetHandler}/>
             </div>
         </div>
     );

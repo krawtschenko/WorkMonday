@@ -3,15 +3,22 @@ import './App.css';
 import Counter from "./Counter";
 import SettingCounter from "./SettingCounter";
 
+export type ValuesType = {
+    minValue: number
+    maxValue: number
+}
+
 function App() {
-    let minValue = 0
-    let maxValue = 10
-    let [num, setNum] = useState<number>(minValue)
+    const [values, setValues] = useState<ValuesType>({
+        minValue: 0,
+        maxValue: 5
+    })
+    const [num, setNum] = useState<number>(values.minValue)
 
     return (
         <div className="App">
-            <SettingCounter minValue={minValue} maxValue={maxValue}/>
-            <Counter num={num} setNum={setNum}/>
+            <SettingCounter values={values} setValues={setValues} setNum={setNum}/>
+            <Counter num={num} setNum={setNum} values={values}/>
         </div>
     );
 }
