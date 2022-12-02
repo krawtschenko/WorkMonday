@@ -3,15 +3,15 @@ import Button from "./Button";
 import {ValuesType} from "./App";
 
 type CounterType = {
-    num: number
-    setNum: (num: number) => void
+    num: number | string
+    setNum: (num: number | string) => void
     values: ValuesType
 }
 
 const Counter: React.FC<CounterType> = ({num, setNum, values}) => {
     function onClickIncHandler() {
         if (num < values.maxValue) {
-            setNum(++num)
+            setNum(Number(num) + 1)
         }
     }
 
@@ -19,7 +19,8 @@ const Counter: React.FC<CounterType> = ({num, setNum, values}) => {
         setNum(values.minValue)
     }
 
-    const classForTitle = num === values.maxValue ? `title titleRed` : 'title'
+    const classForTitle = num === values.maxValue || num === 'Incorrect' ? `title titleRed` : 'title'
+    const incorrectValue = values.minValue >= values.maxValue || values.minValue < 0 || values.maxValue < 0
 
     return (
         <div className={'counter'}>
@@ -27,8 +28,8 @@ const Counter: React.FC<CounterType> = ({num, setNum, values}) => {
                 <h1 className={classForTitle}>{num}</h1>
             </div>
             <div className={'buttons'}>
-                <Button className={'button'} disable={num === values.maxValue} name={'INC'} callback={onClickIncHandler}/>
-                <Button className={'button'} disable={num === values.minValue} name={'RESET'} callback={onClickResetHandler}/>
+                <Button className={'button'} disable={num === values.maxValue || incorrectValue} name={'INC'} callback={onClickIncHandler}/>
+                <Button className={'button'} disable={num === values.minValue || incorrectValue} name={'RESET'} callback={onClickResetHandler}/>
             </div>
         </div>
     );

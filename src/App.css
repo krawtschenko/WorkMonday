@@ -51,6 +51,7 @@
 
 .titleRed {
   color: red;
+  opacity: 70%;
 }
 
 .place {
@@ -75,6 +76,12 @@
   padding: 5px;
   border-color: #61dafb;
   border-radius: 5px;
+}
+
+.inputError {
+  border-color: red;
+  background: red;
+  opacity: 50%;
 }
 
 .span {

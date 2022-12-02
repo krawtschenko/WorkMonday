@@ -13,11 +13,11 @@ function App() {
         minValue: 0,
         maxValue: 5
     })
-    const [num, setNum] = useState<number>(values.minValue)
+    const [num, setNum] = useState<number | string>(values.minValue)
 
     return (
         <div className="App">
-            <SettingCounter values={values} setValues={setValues} setNum={setNum}/>
+            <SettingCounter values={values} setValues={setValues} num={num} setNum={setNum}/>
             <Counter num={num} setNum={setNum} values={values}/>
         </div>
     );
