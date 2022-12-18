@@ -1,6 +1,6 @@
 import React from 'react';
-import Button from "./components/Button";
-import {ValuesType} from "./App";
+import Button from "./Button";
+import {ValuesType} from "../App";
 
 type CounterType = {
     num: number | string
@@ -8,7 +8,7 @@ type CounterType = {
     values: ValuesType
 }
 
-const Counter: React.FC<CounterType> = ({num, setNum, values}) => {
+const CounterRedux: React.FC<CounterType> = ({num, setNum, values}) => {
     function onClickIncHandler() {
         if (num < values.maxValue) {
             setNum(Number(num) + 1)
@@ -35,4 +35,4 @@ const Counter: React.FC<CounterType> = ({num, setNum, values}) => {
     );
 };
 
-export default Counter;
+export default CounterRedux;

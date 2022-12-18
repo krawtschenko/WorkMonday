@@ -1,5 +1,5 @@
 import React, {ChangeEvent, useEffect} from 'react';
-import Button from "./Button";
+import Button from "./components/Button";
 import {ValuesType} from "./App";
 import {restoreState, saveState} from "./localStorage";
 
